@@ -1,0 +1,195 @@
+.join {
+    width: 100vw;
+    height: 100vh;
+
+    @include flex-setting(column, center, center);
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        background-color: $black;
+
+        padding: 2.5rem 1.25rem;
+
+        position: relative;
+    }
+
+    &__closer {
+        position: absolute;
+        top: 0.75rem;
+        right: 1.25rem;
+
+        display: block;
+        width: 16px;
+        height: 16px;
+
+        cursor: pointer;
+        outline: none;
+
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0.646447' y1='15.6464' x2='15.4957' y2='0.797204' stroke='white'/%3E%3Cline x1='0.353553' y1='0.646447' x2='15.2028' y2='15.4957' stroke='white'/%3E%3C/svg%3E");
+
+        background-color: transparent;
+        border: none;
+    }
+
+    &__form {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        &.submitted {
+            .join__list,
+            .join__description,
+            .join__submit {
+                display: none;
+            }
+
+            .join__reaction {
+                display: flex;
+            }
+        }
+    }
+
+    &__reaction {
+        width: 100%;
+        @include flex-setting(column, center, center);
+
+        display: none;
+
+        &-text {
+            @include font-setting($helve-font, 1.5625rem, 1.2, 400, $white);
+            text-align: center;
+        }
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 2.5rem;
+
+        gap: 1.25rem;
+    }
+
+    &__item {
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        height: 44px;
+        padding-left: 0.875rem;
+        padding-right: 0.875rem;
+
+        border: none;
+        border-bottom: 1px solid #999;
+        background-color: $black;
+
+        @include font-setting($helve-font, 1.5625rem, 1, 400, $white);
+
+        cursor: text;
+        transition: 0.3s ease-in;
+
+        &:hover,
+        &:active {
+            border-color: #e6007e;
+            transition: 0.3s ease-in;
+        }
+
+        &:valid {
+            .join__error {
+                opacity: 0;
+                transition: 0.3s ease-in;
+            }
+        }
+    }
+
+    &__error {
+        @include font-setting($helve-font, 1.125rem, 1, 400, #e6007e);
+        margin-left: 0.875rem;
+        transition: 0.3s ease-in;
+    }
+
+    &__description {
+        @include font-setting($helve-font, 1.125rem, 1.375rem, 400, $white);
+        text-align: center;
+        margin-bottom: 1.25rem;
+        max-width: 240px;
+
+        &-rules {
+            color: $white;
+            transition: 0.3s ease-in;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: #e6007e;
+                transition: 0.3s ease-in;
+            }
+        }
+    }
+
+    &__submit {
+        @include flex-setting(column, center, center);
+        @include font-setting($helve-font, 1.5rem, 1.5rem, 400, $white);
+
+        background-color: #000;
+        border: 1px solid $white;
+
+        padding: 0.6875rem 1.9375rem;
+        transition: 0.3s ease-in;
+
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            border-color: #e6007e;
+            color: #e6007e;
+            transition: 0.3s ease-in;
+        }
+
+        &:active {
+            border-color: #e6007e;
+            color: $white;
+            background-color: #e6007e;
+            transition: 0.3s ease-in;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .join {
+        &__wrapper {
+            max-width: 375px;
+            height: auto;
+            padding: 3rem 1.25rem 2.5rem 1.25rem;
+            box-shadow: 0 0 20px 1px rgba(230, 0, 126, 0.1);
+        }
+
+        &__closer {
+            top: 1.25rem;
+        }
+    }
+}

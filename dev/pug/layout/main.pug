@@ -1,0 +1,72 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		<!--[if IE]>
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+		link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+		link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;900&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet")
+	body.body
+		include ../modules/header/header
+		main.main
+			section.week
+				ul.week__list
+					li.week__item.opened
+						<!--Заголовок/описание-->
+						h2.week__title Неделя 1
+						p.week__name Время ещё есть!
+						<!--Превью недели-->
+						.week__preview
+							.preview__round.round1
+							.preview__round.round2
+							.preview__round.round3
+							.preview__round.round4
+							h2.week__subtitle Время наполнить.... дом друзьями
+							p.week__description Постой, до праздника еще куча времени, не обязательно так спешить. Лучше собери друзей, вот тебе плейлист &#x1F447; для посиделок (обсудите, как будете проводить НГ).
+							.week__advice
+								p.week__advice-note Кстати о посиделках: мы советуем
+								a(href="#" target="_blank").week__advice-link вино Urban Riesling, Nik Weis St. Urbans-Hof, 2020 г.
+						<!--Остаток дней до НГ-->
+						.week__info#daysCount
+							picture.week__info-frame
+								source(srcset="static/images/content/week-info-bg.webp" type="image/webp")
+								img(src="static/images/content/week-info-bg.png" alt="Недельная информация").week__info-image
+							span.week__info-nr.daysLeft
+							span.week__info-text#daysNr
+							p.span.week__info-about до наполнения желаний
+						<!--Список дней-->
+						ul.week__event.event
+							+eventItem('first', 'event-1', '1', '2021-12-01', '1 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('imageOnly second', 'event-2', '2', '2021-12-02', '2 декабря', '', '#', '#')
+							+eventItem('imageOnly third', 'event-1', '3', '2021-12-03', '3 декабря', '', '#', '#')
+							+eventItem('fourth', 'event-2', '4', '2021-12-04', '4 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('imageOnly fifth', 'event-1', '5', '2021-12-05', '5 декабря', '', '#', '#')
+							+eventItem('sixth', 'event-2', '6', '2021-12-06', '6 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('seventh', 'event-1', '7', '2021-12-07', '7 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+					li.week__item.inactive
+						h2.week__title Неделя 2
+						p.week__name &#x1F60C;&#x1F381;
+					li.week__item.inactive
+						h2.week__title Неделя 3
+						p.week__name &#x1F914;
+					li.week__item.inactive
+						h2.week__title Неделя 4
+						p.week__name &#x1F457;&#x1F3A9;	
+					li.week__item.inactive
+						h2.week__title Итоги
+						p.week__name &#x2728;&#x1F4A5;&#x26A1;	
+		include ../modules/footer/footer
+		script(src="static/js/vendor/jquery-3.3.1.min.js")
+		script(src="static/js/main.js")
+		script(src="static/js/counter.js")
+		block script

@@ -1,0 +1,24 @@
+mixin eventItem(type, image, nr, date, dateShort, description, link1, link2)
+    li(class="event__item " +type)
+        .event__cover
+            span=nr
+        .event__content
+            picture.event__frame
+                source(srcset="static/images/content/" +image +".webp" type="image/webp")
+                img(src="static/images/content/" +image +".jpg" alt="" +dateShort).event__frame-image
+            .event__body
+                time(datetime="" +date).event__time=dateShort
+                p.event__description=description
+                
+                .event__links
+                    a(href="" +link1 target="_blank").event__links-btn.event__links-btn--spotify
+                    a(href="" +link2 target="_blank").event__links-btn.event__links-btn--ym
+                .event__share
+                    button(type="button").event__share-btn.event__share-btn--in
+                        i.fab.fa-instagram
+                    button(type="button").event__share-btn.event__share-btn--fb
+                        i.fab.fa-facebook-f
+                    button(type="button").event__share-btn.event__share-btn--tg
+                        i.fab.fa-telegram-plane
+                    button(type="button").event__share-btn.event__share-btn--vk
+                        i.fab.fa-vk

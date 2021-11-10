@@ -1,0 +1,141 @@
+.week {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    background-color: $green;
+
+    padding: 0;
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        max-height: 136px;
+        overflow: hidden;
+
+        padding: 1.625rem 1.375rem 2.5rem 1.375rem;
+
+        background: linear-gradient(180deg, #AA7D43 0%, rgba(170, 125, 67, 0) 100%), linear-gradient(90deg, #E9C082 0%, #EABE85 24.41%, #C89350 49.89%, #EABE85 75.57%, #E8BF81 100%);
+
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(270.03deg, #E9C082 6.15%, #EABE85 28.4%, #C89350 51.63%, #EABE85 75.05%, #E8BF81 97.32%);
+
+            bottom: 0;
+            left: 0;
+        }
+
+        &.inactive {
+            pointer-events: none;
+
+            .week__title {
+                opacity: 0.5;
+            }
+        }
+
+        &.opened {
+            max-height: 100vh;
+            background: transparent;
+            transition: max-height 0.8s $cubic background 0.8s $cubic;
+
+            .week__title {
+                color: $white;
+
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 1L8 7L1 1' stroke='%23C48B37' stroke-width='2'/%3E%3C/svg%3E");
+                    transform: translateY(-50%) rotate(180deg);
+                    transition: 0.3s $cubic;
+                }
+            }
+
+            .week__name {
+                color: #BF8229;
+                transition: 0.4s $cubic 0.8s;
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+
+    &__title {
+        @include font-setting($primary-font, 0.875rem, 1.0625rem, 600, $green);
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+
+        padding-right: 1.5625rem;
+
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 14px;
+            height: 6px;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 1L8 7L1 1' stroke='%23054921' stroke-width='2'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            transition: 0.3s $cubic;
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, 1.875rem, 2.25rem, 600, $green);
+        text-transform: uppercase;
+        margin-bottom: 2.25rem;
+    }
+
+    &__preview {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        border: 1px solid #EAC17D;
+        background-color: red;
+
+        padding: 2rem 1.625rem;
+
+        position: relative;
+        z-index: 0;
+
+        .preview__round {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+
+            &.round1 {
+                top: 0;
+                left: 0;
+
+                z-index: 10;
+            }
+        }
+    }
+
+    @supports (background: paint(id)) {
+        .week__preview {
+            border-radius: 0;
+            mask-image: paint(corner-shape);
+            --corner-radius: 56px;
+            --corner-shape: scoop;
+        }
+    }
+}

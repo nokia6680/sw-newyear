@@ -1,0 +1,18 @@
+header.header
+    a(href="index.html" target="_self").header__link
+        img(src="static/images/content/swt.svg" alt="Simple время выполнения желаний").header__link-image
+    .header__time
+        b.header__title До нового года осталось:
+        ul.header__counter#timelist
+            li.header__counter-item
+                span.header__counter-num.days
+                span.header__counter-title#daysNum
+            li.header__counter-item
+                span.header__counter-num.hours
+                span.header__counter-title#hoursNum
+            li.header__counter-item
+                span.header__counter-num.minutes
+                span.header__counter-title#minutesNum
+            li.header__counter-item
+                span.header__counter-num.seconds
+                span.header__counter-title#secondsNum

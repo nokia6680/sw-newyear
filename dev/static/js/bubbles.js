@@ -1,4 +1,4 @@
-var density = 500,
+var density = 700,
     speed = 0.4,
     bodyWidth = $(window).width(),
     start = {
@@ -8,7 +8,7 @@ var density = 500,
         xMax: bodyWidth,
         scaleMin: 0.1,
         scaleMax: 0.45,
-        opacityMin: 0.2,
+        opacityMin: 0.5,
         opacityMax: 0.8
     },
     mid = {
@@ -20,13 +20,13 @@ var density = 500,
         opacityMax: 1
     },
     end = {
-        yMin: 800,
-        yMax: 800,
+        yMin: 1200,
+        yMax: 1200,
         xMin: 0,
         xMax: bodyWidth,
-        scaleMin: 0.1,
+        scaleMin: 0.8,
         scaleMax: 1,
-        opacityMin: 0.2,
+        opacityMin: 0.5,
         opacityMax: 0.7
     },
     colors = ["#003ed9", "#00e6d7", "#fb8100", "#ef0000", "#e849e0", "#c7e105", "#1bd51b", "#2044e0"];

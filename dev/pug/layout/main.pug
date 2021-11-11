@@ -20,7 +20,6 @@ html(lang="ru-RU")
 		.bubbles-body#body
 		include ../modules/header/header
 		main.main
-			img(src="static/images/content/pearl.svg" alt="")
 			section.week
 				ul.week__list
 					li.week__item.opened
@@ -29,32 +28,34 @@ html(lang="ru-RU")
 						p.week__name Время ещё есть!
 						<!--Превью недели-->
 						.week__preview
-							.preview__round.round1
-							.preview__round.round2
-							.preview__round.round3
-							.preview__round.round4
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-1
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-2
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-3
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-4
 							h2.week__subtitle Время наполнить.... дом друзьями
 							p.week__description Постой, до праздника еще куча времени, не обязательно так спешить. Лучше собери друзей, вот тебе плейлист &#x1F447; для посиделок (обсудите, как будете проводить НГ).
-							.week__advice
-								p.week__advice-note Кстати о посиделках: мы советуем
-								a(href="#" target="_blank").week__advice-link вино Urban Riesling, Nik Weis St. Urbans-Hof, 2020 г.
 						<!--Остаток дней до НГ-->
 						.week__info#daysCount
-							picture.week__info-frame
-								source(srcset="static/images/content/week-info-bg.webp" type="image/webp")
-								img(src="static/images/content/week-info-bg.png" alt="Недельная информация").week__info-image
-							span.week__info-nr.daysLeft
-							span.week__info-text#daysNr
-							p.span.week__info-about до наполнения желаний
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-5
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-6
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-7
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-8
+							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-9
+
+							.week__info-frame
+							.week__info-details
+								span.week__info-nr.daysLeft 27
+								span.week__info-text#daysNr дней
+								p.span.week__info-about до наполнения желаний
 						<!--Список дней-->
 						ul.week__event.event
-							+eventItem('first', 'event-1', '1', '2021-12-01', '1 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
-							+eventItem('imageOnly second', 'event-2', '2', '2021-12-02', '2 декабря', '', '#', '#')
-							+eventItem('imageOnly third', 'event-1', '3', '2021-12-03', '3 декабря', '', '#', '#')
-							+eventItem('fourth', 'event-2', '4', '2021-12-04', '4 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
-							+eventItem('imageOnly fifth', 'event-1', '5', '2021-12-05', '5 декабря', '', '#', '#')
-							+eventItem('sixth', 'event-2', '6', '2021-12-06', '6 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
-							+eventItem('seventh', 'event-1', '7', '2021-12-07', '7 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('1st first', 'event-1', '1', '2021-12-01', '1 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('2nd imageOnly second', 'event-2', '2', '2021-12-02', '2 декабря', '', '#', '#')
+							+eventItem('3rd imageOnly third', 'event-1', '3', '2021-12-03', '3 декабря', '', '#', '#')
+							+eventItem('4th fourth', 'event-2', '', '2021-12-04', '4 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('5th imageOnly fifth', 'event-1', '', '2021-12-05', '5 декабря', '', '#', '#')
+							+eventItem('6th sixth', 'event-2', '', '2021-12-06', '6 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
+							+eventItem('7th seventh', 'event-1', '', '2021-12-07', '7 декабря', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')
 					li.week__item.inactive
 						h2.week__title Неделя 2
 						p.week__name &#x1F60C;&#x1F381;

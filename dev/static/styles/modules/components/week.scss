@@ -47,9 +47,9 @@
         }
 
         &.opened {
-            max-height: 100vh;
+            max-height: 5000px;
             background: transparent;
-            transition: max-height 0.8s $cubic background 0.8s $cubic;
+            transition: max-height 0.8s $cubic, background 0.8s $cubic;
 
             .week__title {
                 color: $white;
@@ -106,36 +106,149 @@
 
     &__preview {
         width: 100%;
-        @include flex-setting(column, flex-start, center);
+        aspect-ratio: 1 / 1;
 
-        border: 1px solid #EAC17D;
-        background-color: red;
-
-        padding: 2rem 1.625rem;
+        @include flex-setting(column, center, center);
+        background-image: url('../images/content/preview-bg.png');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 2rem 1.5rem 1.25rem 1.5rem;
 
         position: relative;
         z-index: 0;
 
-        .preview__round {
-            width: 40px;
-            height: 40px;
+        .round {
+            width: 22px;
+            height: 22px;
             position: absolute;
+            object-fit: contain;
+            filter: drop-shadow(15px 14px 12px rgba(0, 45, 20, 0.6));
 
-            &.round1 {
+            &.round-1 {
                 top: 0;
                 left: 0;
+                transform: scaleX(-1);
+            }
 
-                z-index: 10;
+            &.round-2 {
+                top: 0;
+                right: 0;
+            }
+
+            &.round-3 {
+                bottom: -0.25rem;
+                left: 0;
+                transform: scaleX(-1);
+            }
+
+            &.round-4 {
+                bottom: -0.25rem;
+                right: 0;
             }
         }
     }
 
-    @supports (background: paint(id)) {
-        .week__preview {
-            border-radius: 0;
-            mask-image: paint(corner-shape);
-            --corner-radius: 56px;
-            --corner-shape: scoop;
+    &__subtitle {
+        @include font-setting($primary-font, 1.5rem, 1.8125rem, 600, $white);
+        text-align: center;
+
+        margin-bottom: 0.9375rem;
+    }
+
+    &__description {
+        @include font-setting($primary-font, 1rem, 1.25rem, 500, $white);
+        text-align: center;
+    }
+
+    &__info {
+        width: 100%;
+
+        @include flex-setting(column, center, center);
+
+        background-image: url('../images/content/info-bg.svg');
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: -5px;
+        margin-bottom: 1rem;
+        padding: 2.875rem 2.875rem;
+
+        aspect-ratio: 1 / 1;
+        position: relative;
+
+        .round {
+            position: absolute;
+
+            width: 22px;
+            height: 22px;
+            filter: drop-shadow(-15px 14px 12px rgba(0, 45, 20, 0.5));
+
+            &.round-5 {
+                bottom: 0;
+                right: 0;
+            }
+
+            &.round-6 {
+                bottom: 0;
+                left: 0;
+            }
+
+            &.round-7 {
+                width: 60px;
+                height: 60px;
+
+                top: 0.5rem;
+                left: 2.875rem;
+
+                z-index: 2;
+
+                transform: scaleX(-1);
+            }
+
+            &.round-8 {
+                width: 38px;
+                height: 38px;
+                right: 0.125rem;
+                top: 36%;
+            }
+        }
+
+        &-frame {
+            width: 100%;
+            height: 0;
+
+            padding-bottom: 100%;
+            position: relative;
+            overflow: hidden;
+
+            background-color: #C0CCEF;
+        }
+
+        &-details {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include flex-setting(column, flex-start, center);
+        }
+
+        &-nr {
+            @include font-setting($primary-font, 6.25rem, 7.5rem, 600, C29266);
+            -webkit-background-clip: text;
+            background-image: linear-gradient(30deg, #C29266 13%, #F7CD81 36.98%, #FFF9ED 44.79%, #F7CD81 66.67%, #C29266 92.19%);
+            -webkit-text-fill-color: transparent;
+            text-shadow: 5px 4px 7px rgba(0, 0, 0, 0.15);
+        }
+
+        &-text {
+            @include font-setting($primary-font, 1rem, 1.25rem, 600, #BF8229);
+        }
+
+        &-about {
+            @include font-setting($primary-font, 1rem, 1.25rem, 600, #BF8229);
+            text-align: center;
         }
     }
 }

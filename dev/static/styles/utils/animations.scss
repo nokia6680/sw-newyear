@@ -1,27 +1,50 @@
-@keyframes fade-in {
+@keyframes blink {
     0% {
-        opacity: 0;
-        transform: translateX(100%);
-        transform-origin: left;
+        transform: translate(0, 0);
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+
+    50% {
+        transform: translate(10px, 10px);
+        filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.5));
     }
 
     100% {
-        opacity: 1;
-        transform: translateX(0);
-        transform-origin: left;
+        transform: translate(0, 0);
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
     }
 }
 
-@keyframes fade-in-bottom {
+@keyframes blink-nomove {
     0% {
-        opacity: 0;
-        transform: translateY(50%);
-        transform-origin: left;
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+
+    50% {
+        filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.7));
     }
 
     100% {
-        opacity: 1;
-        transform: translateY(0);
-        transform-origin: left;
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translate(0, 0);
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
+    }
+
+    50% {
+        transform: translate(-20px, 20px);
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0px 0px 25px 15px rgba(255, 255, 255, 0.8);
+    }
+
+    100% {
+        transform: translate(0, 0);
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.5);
     }
 }

@@ -21,6 +21,36 @@
         left: 0;
     }
 
+    &__ball {
+        position: absolute;
+
+        width: 28px;
+        height: 28px;
+
+        filter: drop-shadow(15px 14px 12px rgba(0, 45, 20, 0.5));
+
+        &--1 {
+            top: -0.875rem;
+            right: 10%;
+
+            animation: blink 10s infinite alternate;
+        }
+
+        &--2 {
+            top: 6.25rem;
+            right: 1.25rem;
+            animation: blink 6s infinite forwards;
+        }
+
+        &--3 {
+            width: 46px;
+            height: 46px;
+            top: 1.25rem;
+            left: -0.5rem;
+            animation: blink 16s infinite reverse;
+        }
+    }
+
     &__link {
         @include flex-setting(column, center, center);
 

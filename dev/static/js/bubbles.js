@@ -1,15 +1,15 @@
-var density = 700,
-    speed = 0.4,
+var density = 500,
+    speed = 0.3,
     bodyWidth = $(window).width(),
     start = {
         yMin: 0,
         yMax: 0,
         xMin: 0,
         xMax: bodyWidth,
-        scaleMin: 0.1,
-        scaleMax: 0.45,
-        opacityMin: 0.5,
-        opacityMax: 0.8
+        scaleMin: 0.2,
+        scaleMax: 1,
+        opacityMin: 0.6,
+        opacityMax: 0.8,
     },
     mid = {
         xMin: 0,
@@ -24,10 +24,10 @@ var density = 700,
         yMax: 1200,
         xMin: 0,
         xMax: bodyWidth,
-        scaleMin: 0.8,
+        scaleMin: 0.2,
         scaleMax: 1,
         opacityMin: 0.5,
-        opacityMax: 0.7
+        opacityMax: 1
     },
     colors = ["#003ed9", "#00e6d7", "#fb8100", "#ef0000", "#e849e0", "#c7e105", "#1bd51b", "#2044e0"];
 
@@ -72,7 +72,7 @@ function spawn(particle) {
     });
 
     //now create some random scale and opacity changes
-    partialDuration = wholeDuration * (0.5 + Math.random() * 0.3);
+    partialDuration = wholeDuration * (0.6 + Math.random() * 0.3);
     TweenLite.to(particle, partialDuration, {
         delay: delay,
         scale: range(mid, "scale"),

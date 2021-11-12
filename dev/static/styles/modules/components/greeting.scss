@@ -1,0 +1,26 @@
+.greeting {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @include flex-setting(column, center, center);
+
+    z-index: 999;
+
+    &__wrapper {
+        width: 100%;
+        max-width: 95%;
+
+        @include flex-setting(column, flex-start, center);
+
+        background-color: #EAC17D;
+    }
+}

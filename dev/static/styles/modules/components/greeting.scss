@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
 
-    position: absolute;
+    position: fixed;
 
     top: 0;
     left: 0;
@@ -17,10 +17,78 @@
 
     &__wrapper {
         width: 100%;
-        max-width: 95%;
-
-        @include flex-setting(column, flex-start, center);
-
+        max-width: 355px;
         background-color: #EAC17D;
+
+        padding: 0.625rem 0.625rem;
+
+        position: relative;
+
+        animation: fadeIn 2s 1 forwards;
+    }
+
+    &__closer {
+        position: absolute;
+
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-color: transparent;
+        background-image: url('../images/content/cross-black.svg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        top: 0.625rem;
+        right: 0.625rem;
+
+        cursor: pointer;
+    }
+
+    &__body {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+        background-image: url('../images/content/greet-bg.svg');
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 335px 470px;
+        padding: 3.75rem 0 3.25rem 0;
+    }
+
+    &__title {
+        @include font-setting($primary-font, 1.75rem, 2.125rem, 400, $darkgreen);
+        text-align: center;
+        margin-bottom: 0.8125rem;
+        max-width: 90%;
+
+        b {
+            font-weight: bold;
+        }
+    }
+
+    &__description {
+        @include font-setting($primary-font, 1rem, 1.25rem, 500, $darkgreen);
+        text-align: center;
+        margin-bottom: 2.125rem;
+        max-width: 90%;
+    }
+
+    &__proceed {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.875rem, 1.0625rem, 500, $black);
+
+        background-color: $white;
+        border: none;
+        padding: 0.875rem 1rem;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        transition: 0.3s $cubic;
+
+        &:hover,
+        &:active {
+            background-color: $darkgreen;
+            color: $white;
+            transition: 0.3s $cubic;
+        }
     }
 }

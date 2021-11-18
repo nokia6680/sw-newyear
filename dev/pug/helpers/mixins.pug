@@ -1,7 +1,9 @@
-mixin eventItem(type, image, nr, date, dateShort, description, link1, link2)
+mixin eventItem(type, image, nr, month, date, dateShort, description, link1, link2)
     li(class="event__item " +type)
         .event__cover
-            span=nr
+            .event__day
+                span.event__day-nr=nr
+                span.event__day-month=month
         .event__content
             picture.event__frame
                 source(srcset="static/images/content/" +image +".webp" type="image/webp")

@@ -7,8 +7,8 @@
     grid-template-areas:
         'e1 e1'
         'e2 e3'
-        'e2 e4'
-        'e5 e4'
+        'e2 e5'
+        'e4 e5'
         'e6 e6'
         'e7 e7'
     ;
@@ -19,13 +19,13 @@
     transition: 0.4s $cubic;
 
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
     &.secondPressed {
         grid-template-areas:
             'e1 e1'
             'e2 e2'
-            'e4 e3'
+            'e3 e5'
             'e4 e5'
             'e6 e6'
             'e7 e7'
@@ -137,16 +137,17 @@
 
             .event__cover {
                 padding: 1.25rem 0;
+            }
 
-                span {
-                    @include flex-setting(column, center, center);
-                    @include font-setting($primary-font, 3.75rem, 4.5rem, 500, #BF8229);
+            .event__day {
+                width: 102px;
+                height: 92px;
+                border: 1px solid #EAC17D;
+                border-radius: 42px;
+
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 500, #BF8229);
                     text-shadow: 1px 1px #EAC17D, -1px -1px 0 #EAC17D, 1px -1px 0 #EAC17D, -1px 1px 0 #EAC17D;
-                    width: 102px;
-                    height: 92px;
-
-                    border: 1px solid #EAC17D;
-                    border-radius: 38px;
                 }
             }
         }
@@ -156,18 +157,23 @@
 
             .event__cover {
                 padding: 0.625rem 0;
+            }
 
-                span {
-                    @include flex-setting(column, center, center);
-                    @include font-setting($primary-font, 2.25rem, 2.75rem, 700, $green);
-                    font-style: italic;
-                    text-shadow: 2px 0 0 #BF8229, -2px 0 0 #BF8229, 0 2px 0 #BF8229, 0 -2px 0 #BF8229, 1px 1px #BF8229, -1px -1px 0 #BF8229, 1px -1px 0 #BF8229, -1px 1px 0 #BF8229;
-                    width: 120px;
-                    height: 56px;
+            .event__day {
+                width: 120px;
+                height: 56px;
 
-                    background-size: 24px 27px;
-                    border: 1px solid #EAC17D;
-                    border-radius: 50%;
+                background-size: 24px 27px;
+                border: 1px solid #EAC17D;
+                border-radius: 45%;
+
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 700, $green);
+                    text-shadow: 1px 1px #BF8229, -1px -1px 0 #BF8229, 1px -1px 0 #BF8229, -1px 1px 0 #BF8229;
+                }
+
+                &-month {
+                    color: #B47F2A;
                 }
             }
         }
@@ -176,26 +182,19 @@
             grid-area: e4;
 
             .event__cover {
-                padding: 1.25rem 0;
+                padding: 0.625rem 0;
+            }
 
-                span {
-                    @include flex-setting(column, center, center);
-                    @include font-setting($primary-font, 3.125rem, 3.75rem, 900, #BF8229);
-                    width: 120px;
-                    height: 84px;
-                    border: 1px solid #EAC17D;
-                    border-radius: 50%;
-                    position: relative;
+            .event__day {
+                width: 110px;
+                height: 60px;
+                border: 1px solid #EAC17D;
+                border-radius: 50%;
+                position: relative;
 
-                    &::after {
-                        position: absolute;
-                        content: '4';
-                        @include font-setting($primary-font, 3.125rem, 3.75rem, 200, $green);
-
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                    }
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 500, #EAC17D);
+                    text-shadow: 1px 1px #F8E3C0, -1px -1px 0 #F8E3C0, 1px -1px 0 #F8E3C0, -1px 1px 0 #F8E3C0;
                 }
             }
         }
@@ -204,18 +203,18 @@
             grid-area: e5;
 
             .event__cover {
-                padding: 0.625rem 0;
+                padding: 1.625rem 0;
+            }
 
-                span {
-                    @include flex-setting(column, center, center);
-                    @include font-setting($primary-font, 2.25rem, 2.75rem, 300, #BF8229);
-                    font-style: italic;
-                    text-shadow: 3px 0 0 #EAC17D, -3px 0 0 #EAC17D, 0 3px 0 #EAC17D, 0 -3px 0 #EAC17D, 2px 0 0 #EAC17D, -2px 0 0 #EAC17D, 0 2px 0 #EAC17D, 0 -2px 0 #EAC17D, 1px 1px #EAC17D, -1px -1px 0 #EAC17D, 1px -1px 0 #EAC17D, -1px 1px 0 #EAC17D;
-                    width: 120px;
-                    height: 56px;
+            .event__day {
+                width: 120px;
+                height: 84px;
+                border: 1px solid #EAC17D;
+                border-radius: 47%;
 
-                    border: 1px solid #EAC17D;
-                    border-radius: 50%;
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 700, #B47F2A);
+                    text-shadow: 1px 1px #F8E3C0, -1px -1px 0 #F8E3C0, 1px -1px 0 #F8E3C0, -1px 1px 0 #F8E3C0;
                 }
             }
         }
@@ -225,26 +224,17 @@
 
             .event__cover {
                 padding: 0.625rem 0;
+            }
 
-                span {
-                    @include flex-setting(column, center, center);
-                    @include font-setting($primary-font, 2.75rem, 3.375rem, 400, #EAC17D);
-                    width: 140px;
-                    height: 60px;
-                    border: 1px solid #EAC17D;
-                    border-radius: 50%;
+            .event__day {
+                width: 140px;
+                height: 60px;
+                border: 1px solid #EAC17D;
+                border-radius: 50%;
 
-                    position: relative;
-
-                    &::after {
-                        position: absolute;
-                        content: '6';
-                        @include font-setting($primary-font, 2.75rem, 3.375rem, 400, #072C14);
-                        top: 56%;
-                        left: 56%;
-                        transform: translate(-50%, -50%);
-                        z-index: -1;
-                    }
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 400, #EAC17D);
+                    text-shadow: 1px 1px #072C14, -1px 1px 0 #072C14;
                 }
             }
         }
@@ -256,16 +246,18 @@
             justify-self: center;
 
             .event__cover {
-                padding: 1.25rem 0;
+                padding: 1.3125rem 0;
+            }
 
-                span {
-                    @include flex-setting(column, center, center);
-                    @include font-setting($primary-font, 4rem, 4.875rem, 500, #EAC17D);
+            .event__day {
+                width: 116px;
+                height: 78px;
+                border: 1px solid #EAC17D;
+                border-radius: 50%;
+
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 500, #EAC17D);
                     text-shadow: 0px 0px 15px #EAC17D;
-                    width: 116px;
-                    height: 78px;
-                    border: 1px solid #EAC17D;
-                    border-radius: 50%;
                 }
             }
 
@@ -312,21 +304,38 @@
             transform: translateY(-50%);
         }
 
-        span {
-            background-color: #054921;
-            z-index: 2;
+        &:hover {
+            background-color: #072C14;
+            box-shadow: 23px 20px 10px rgba(0, 0, 0, 0.25);
             transition: 0.4s $cubic;
+
+            .event__day {
+                background-color: #072C14;
+                transition: 0.4s $cubic;
+            }
         }
+    }
+
+    &__day {
+        @include flex-setting(column, center, center);
+        background-color: $green;
+        z-index: 2;
+        transition: 0.4s $cubic;
 
         &:hover {
             background-color: #072C14;
             box-shadow: 23px 20px 10px rgba(0, 0, 0, 0.25);
             transition: 0.4s $cubic;
 
-            span {
+            .event__day-month {
                 background-color: #072C14;
                 transition: 0.4s $cubic;
             }
+        }
+
+        &-month {
+            @include font-setting($primary-font, 0.625rem, 0.75rem, 500, #EAC17D);
+            text-transform: uppercase;
         }
     }
 
@@ -390,6 +399,7 @@
     }
 
     &__links {
+        justify-content: center;
         width: 100%;
         display: grid;
         grid-template-columns: 122px 165px;

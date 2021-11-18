@@ -34,8 +34,7 @@ html(lang="ru-RU")
 							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-4
 							.week__preview-info
 								h2.week__subtitle Время наполнить.... вишлист
-								p.week__description Запускаем режим «Успеть все до НГ»! Готовимся завершать дела, которые давно откладывали, чтобы начать 2022 с чистого листа. Но это чуть позже. А сейчас самое важное — наполнить бокал вина, составить свой вишлист, обсудить с друзьями новогодние планы и разыграть Тайного Санту. В текущей ситуации лучше все же онлайн, по видеосвязи. 
-								p.week__description Главное — всегда держи под рукой наши плейлисты, которые будут напоминать о предновогодних делах.
+								p.week__description Запускаем режим «Успеть все до НГ»! Готовимся завершать дела, которые давно откладывали, чтобы начать 2022 с чистого листа. Но это чуть позже. А сейчас самое важное — наполнить бокал, составить свой вишлист, обсудить с друзьями новогодние планы и разыграть Тайного Санту. Главное — всегда держи под рукой наши плейлисты, которые будут напоминать о предновогодних делах.
 						<!--Остаток дней до НГ-->
 						.week__info#daysCount
 							img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-5
@@ -74,9 +73,19 @@ html(lang="ru-RU")
 						p.week__name &#x1F457;&#x1F3A9;	
 					li.week__item.inactive
 						h2.week__title 3 недели до нового года
-						p.week__name &#x2728;&#x1F4A5;&#x26A1;	
+						p.week__name &#x2728;
+					li.week__item.inactive
+						h2.week__title 2 недели до нового года
+						p.week__name &#x1F4A5;
+					li.week__item.inactive
+						h2.week__title 1 недели до нового года
+						p.week__name &#x26A1;
+					li.week__item.inactive
+						h2.week__title Итоги
+						p.week__name &#x2728;&#x1F4A5;&#x26A1;
 		include ../modules/footer/footer
 		include ../modules/blocks/greeting
+		include ../modules/blocks/age
 		script(src="static/js/vendor/jquery-3.3.1.min.js")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js")
 		script(src="static/js/bubbles.js")

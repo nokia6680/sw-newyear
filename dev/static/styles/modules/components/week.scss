@@ -100,9 +100,9 @@
     }
 
     &__name {
-        @include font-setting($primary-font, 1.875rem, 2.25rem, 600, $green);
+        @include font-setting($primary-font, 1.375rem, 1.75rem, 600, $green);
         text-transform: uppercase;
-        margin-bottom: 2.25rem;
+        margin-bottom: 3.25rem;
     }
 
     &__preview {

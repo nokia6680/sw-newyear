@@ -1,5 +1,5 @@
 mixin eventItem(type, image, nr, month, date, dateShort, description, link1, link2)
-    li(class="event__item " +type)
+    li(class="event__item " +type data-time="" +date)
         .event__cover
             .event__day
                 span.event__day-nr=nr

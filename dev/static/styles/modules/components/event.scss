@@ -21,6 +21,19 @@
     justify-content: center;
     align-items: start;
 
+    &.fri {
+        grid-template-areas:
+            'e1 e1'
+            'e2 e3'
+            'e2 ...'
+            'e4 ...'
+            'e5 e5'
+            'e6 e6'
+            'e7 e7'
+        ;
+    }
+
+    // Если нажат 2
     &.secondPressed {
         grid-template-areas:
             'e1 e1'
@@ -33,7 +46,7 @@
 
         transition: 0.4s $cubic;
     }
-
+    // Если нажат 3
     &.thirdPressed {
         grid-template-areas:
             'e1 e1'
@@ -47,7 +60,7 @@
 
         transition: 0.4s $cubic;
     }
-
+    // Если нажат 4
     &.fourPressed {
         grid-template-areas:
             'e1 e1'
@@ -61,7 +74,7 @@
 
         transition: 0.4s $cubic;
     }
-
+    // Если нажат 5
     &.fivePressed {
         grid-template-areas:
             'e1 e1'
@@ -75,7 +88,7 @@
 
         transition: 0.4s $cubic;
     }
-
+    // Если нажат 6
     &.sixPressed {
         grid-template-areas:
             'e1 e1'
@@ -89,7 +102,7 @@
 
         transition: 0.4s $cubic;
     }
-
+    // Если нажат 7
     &.sevenPressed {
         grid-template-areas:
             'e1 e1'
@@ -108,17 +121,27 @@
         width: 100%;
         @include flex-setting(column, flex-start, center);
 
-        &:not(:first-of-type) {
-            .event__content {
-                display: none;
-            }
+        .event__content {
+            display: none;
         }
 
         &.first {
             grid-area: e1;
 
             .event__cover {
-                display: none;
+                padding: 0.625rem 0;
+            }
+
+            .event__day {
+                width: 140px;
+                height: 60px;
+                border: 1px solid #EAC17D;
+                border-radius: 50%;
+
+                &-nr {
+                    @include font-setting($primary-font, 1.875rem, 2.25rem, 400, #EAC17D);
+                    text-shadow: 1px 1px #072C14, -1px 1px 0 #072C14;
+                }
             }
         }
 
@@ -356,7 +379,7 @@
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         border-bottom: 1px solid #EAC17D;
-        
+
         &-image {
             position: absolute;
             top: 0;

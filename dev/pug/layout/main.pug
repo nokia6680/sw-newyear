@@ -23,7 +23,7 @@ html(lang="ru-RU")
         main.main
             section.week
                 ul.week__list
-                    li.week__item
+                    li.week__item.opened
                         <!--Заголовок/описание-->
                         h2.week__title 7 недель до нового года
                         p.week__name Время ещё есть!
@@ -36,24 +36,6 @@ html(lang="ru-RU")
                             .week__preview-info
                                 h2.week__subtitle Время наполнить.... вишлист
                                 p.week__description Запускаем режим «Успеть все до НГ»! Готовимся завершать дела, которые давно откладывали, чтобы начать 2022 с чистого листа. Но это чуть позже. А сейчас самое важное — наполнить бокал, составить свой вишлист, обсудить с друзьями новогодние планы и разыграть Тайного Санту. Главное — всегда держи под рукой наши плейлисты, которые будут напоминать о предновогодних делах.
-                        <!--Остаток дней до НГ-->
-                        .week__info#daysCount
-                            img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-5
-                            img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-6
-                            img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-7
-                            img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-8
-                            img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-9
-
-                            .week__info-frame
-                                .week__info-ball.week__info-ball--1
-                                .week__info-ball.week__info-ball--2
-                                .week__info-ball.week__info-ball--3
-                                .week__info-ball.week__info-ball--4
-                                .week__info-ball.week__info-ball--5
-                            .week__info-details
-                                span.week__info-nr.daysLeft 27
-                                span.week__info-text#daysNr дней
-                                p.span.week__info-about до наполнения желаний
                         <!--Список дней-->
                         ul.week__event.event
                             +eventItem('first', 'event-1', '15', 'ноября', '2021-11-15', '15 ноября', 'Здесь какой-то текст — может быть, теплые слова приветствия?', '#', '#')

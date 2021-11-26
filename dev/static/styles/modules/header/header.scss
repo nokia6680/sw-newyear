@@ -104,3 +104,66 @@
         }
     }
 }
+
+@include min-screen(1280px) {
+    .header {
+        padding: 3.125rem 0 2.75rem 0;
+
+        &__ball {
+            position: absolute;
+
+            width: 28px;
+            height: 28px;
+
+            filter: drop-shadow(15px 14px 12px rgba(0, 45, 20, 0.5));
+
+            &--1 {
+                top: -0.875rem;
+                right: 10%;
+
+                animation: blink 10s infinite alternate;
+            }
+
+            &--2 {
+                top: 6.25rem;
+                right: 1.25rem;
+                animation: blink 6s infinite forwards;
+            }
+
+            &--3 {
+                width: 46px;
+                height: 46px;
+                top: 1.25rem;
+                left: -0.5rem;
+                animation: blink 16s infinite reverse;
+            }
+        }
+
+        &__link {
+            width: 316px;
+            height: 100px;
+
+            margin-bottom: 4rem;
+        }
+
+        &__title {
+            font-size: 1rem;
+            line-height: 1.25rem;
+            margin-bottom: 0.6875rem;
+        }
+
+        &__counter {
+            max-width: 316px;
+
+            &-num {
+                font-size: 3.125rem;
+                line-height: 3.8125rem;
+            }
+
+            &-title {
+                font-size: 1rem;
+                line-height: 1.25rem;
+            }
+        }
+    }
+}

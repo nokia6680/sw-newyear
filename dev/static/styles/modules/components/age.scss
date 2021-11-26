@@ -93,3 +93,36 @@
         }
     }
 }
+
+@include min-screen(1280px) {
+    .age {
+        &__wrapper {
+            max-width: 700px;
+        }
+
+        &__closer {
+            right: 0.625rem;
+        }
+
+        &__body {
+            background-image: url('../images/content/age-bg-lg.svg');
+            background-size: 680px 450px;
+            padding: 3.5rem 0 3.75rem 0;
+        }
+
+        &__nr {
+            font-size: 5.75rem;
+            line-height: 7rem;
+        }
+
+        &__description {
+            max-width: 310px;
+            margin-bottom: 1.75rem;
+        }
+
+        &__about {
+            max-width: 414px;
+            margin-bottom: 2.0625rem;
+        }
+    }
+}

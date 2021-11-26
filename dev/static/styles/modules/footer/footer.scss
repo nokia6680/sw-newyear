@@ -37,10 +37,21 @@
         }
     }
 
+    &__rules {
+        @include font-setting($primary-font, 1rem, 1.25rem, 500, $white);
+        text-align: center;
+        margin-bottom: 1rem;
+        max-width: 60%;
+    }
+
     &__note {
         width: 100%;
         height: 100%;
         object-fit: contain;
+
+        &--desktop {
+            display: none;
+        }
     }
 
     &__balls {
@@ -75,6 +86,79 @@
             &.largeBubble {
                 width: 18px;
                 height: 18px;
+            }
+        }
+    }
+}
+
+@include min-screen(1280px) {
+    .footer {
+        padding: 3.25rem 0 1.5625rem 0;
+
+        &__link {
+            width: 446px;
+            height: 141px;
+
+            margin-bottom: 1.25rem;
+        }
+
+        &__frame {
+            width: 302px;
+            transform: rotate(60.08deg);
+            position: absolute;
+            left: 0.375rem;
+            top: -7rem;
+        }
+
+        &__rules {
+            margin-bottom: 2.75rem;
+            max-width: 100%;
+        }
+
+        &__note {
+            &--mobile {
+                display: none;
+            }
+
+            &--desktop {
+                display: block;
+                max-width: 850px;
+            }
+        }
+
+        &__balls {
+            position: absolute;
+            width: 100%;
+            max-width: 120px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            @include flex-setting(column, flex-end, center);
+            padding-bottom: 5rem;
+
+            z-index: 2;
+
+            .bubble {
+                width: 8px;
+                height: 8px;
+                background-image: url('../images/content/pearl.svg');
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+
+                &.mediumBubble {
+                    width: 12px;
+                    height: 12px;
+
+                    animation: blink-nomove 2s infinite alternate;
+                }
+
+                &.largeBubble {
+                    width: 18px;
+                    height: 18px;
+                }
             }
         }
     }

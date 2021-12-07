@@ -27,7 +27,8 @@ html(lang="ru-RU")
                         <!--Заголовок/описание-->
                         .week__head
                             h2.week__title 7 недель до нового года
-                            p.week__name Время ещё есть!
+                            p.week__name 
+                                span.week__sub Время ещё есть!
                         .week__body
                             <!--Превью недели-->
                             .week__preview
@@ -35,6 +36,16 @@ html(lang="ru-RU")
                                 img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-2
                                 img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-3
                                 img(src="static/images/content/pearl.svg" alt="Новогодний шарик").round.round-4
+                                
+                                .week__flakes
+                                    .week__flakes-item.week__flakes-item--1
+                                    .week__flakes-item.week__flakes-item--2
+                                    .week__flakes-item.week__flakes-item--3
+                                    .week__flakes-item.week__flakes-item--4
+                                    .week__flakes-item.week__flakes-item--5
+                                    .week__flakes-item.week__flakes-item--6
+                                    .week__flakes-item.week__flakes-item--7
+                                    .week__flakes-item.week__flakes-item--8
                                 .week__preview-info
                                     h2.week__subtitle Время наполнить.... вишлист
                                     p.week__description Запускаем режим «Успеть все до НГ»! Готовимся завершать дела, которые давно откладывали, чтобы начать 2022 с чистого листа. Но это чуть позже. А сейчас самое важное — наполнить бокал, составить свой вишлист, обсудить с друзьями новогодние планы и разыграть Тайного Санту. Главное — всегда держи под рукой наши плейлисты, которые будут напоминать о предновогодних делах.
@@ -50,7 +61,8 @@ html(lang="ru-RU")
                     li.week__item
                         .week__head
                             h2.week__title 6 недель до нового года
-                            p.week__name Выбираем подарки 
+                            p.week__name 
+                                span.week__sub Выбираем подарки 
                                 span.week__emoji &#x1F381;
                         .week__body
                             <!--Превью недели-->
@@ -75,31 +87,37 @@ html(lang="ru-RU")
                         .week__head
                             h2.week__title 5 недель до нового года
                             p.week__name 
+                                span.week__sub
                                 span.week__emoji &#x1F914;
                     li.week__item.inactive
                         .week__head
                             h2.week__title 4 недели до нового года
                             p.week__name 
+                                span.week__sub
                                 span.week__emoji &#x1F457;&#x1F3A9;	
                     li.week__item.inactive
                         .week__head
                             h2.week__title 3 недели до нового года
                             p.week__name 
+                                span.week__sub 
                                 span.week__emoji &#x2728;
                     li.week__item.inactive
                         .week__head
                             h2.week__title 2 недели до нового года
                             p.week__name 
+                                span.week__sub
                                 span.week__emoji &#x1F4A5;
                     li.week__item.inactive
                         .week__head
                             h2.week__title 1 недели до нового года
                             p.week__name 
+                                span.week__sub
                                 span.week__emoji &#x26A1;
                     li.week__item.inactive
                         .week__head
                             h2.week__title Итоги
                             p.week__name 
+                                span.week__sub
                                 span.week__emoji &#x2728;&#x1F4A5;&#x26A1;
         include ../modules/footer/footer
         include ../modules/blocks/greeting

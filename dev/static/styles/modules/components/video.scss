@@ -1,0 +1,93 @@
+.video {
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, 0.9);
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @include flex-setting(column, center, center);
+
+    z-index: 9999;
+
+    display: none;
+
+    &__wrapper {
+        background-color: #FFFFFF;
+        width: 100%;
+        max-width: 355px;
+        padding: 0.625rem 0.625rem;
+
+        position: relative;
+
+        animation: fadeIn 2s 1 forwards;
+    }
+
+    &__closer {
+        position: absolute;
+
+        width: 20px;
+        height: 20px;
+        border: none;
+        background-color: transparent;
+        background-image: url('../images/content/cross-black.svg');
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        top: 0.875rem;
+        right: 0.875rem;
+
+        cursor: pointer;
+    }
+
+    &__body {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        background-image: url('../images/content/age-bg.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 335px 251px;
+        padding: 3.6875rem 1.25rem 3.6875rem 1.25rem;
+    }
+
+    &__player {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+
+        &-frame {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            object-fit: cover;
+        }
+    }
+}
+
+@include min-screen(1280px) {
+    .video {
+        &__wrapper {
+            max-width: 700px;
+        }
+
+        &__closer {
+            right: 0.625rem;
+        }
+
+        &__body {
+            background-image: url('../images/content/age-bg-lg.svg');
+            background-size: 680px 450px;
+            padding: 3.5rem 2rem 3.75rem 2rem;
+        }
+    }
+}
